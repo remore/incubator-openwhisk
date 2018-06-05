@@ -109,6 +109,16 @@
                     "name": "action-php-v7.1"
                 }
             }
+        ],
+        "ruby": [
+            {
+                "kind": "ruby:2.5",
+                "default": true,
+                "deprecated": false,
+                "image": {
+                    "name": "action-ruby-v2.5"
+                }
+            }
         ]
     },
     "blackboxes": [

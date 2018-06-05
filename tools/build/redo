@@ -309,6 +309,11 @@ Components = [
                   yaml = False,
                   gradle = 'actionRuntimes:php7.1Action'),
 
+    makeComponent('action-ruby-v2.5',
+                  'build Ruby action container',
+                  yaml = False,
+                  gradle = 'actionRuntimes:ruby2.5Action'),
+
     makeComponent('dockersdk',
                   'build docker action SDK (to deploy, use edge component)',
                   yaml = False,

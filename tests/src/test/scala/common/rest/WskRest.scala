@@ -322,6 +322,9 @@ class WskRestAction
           case ".php" => {
             ("php:default", FileUtils.readFileToString(new File(artifactFile), StandardCharsets.UTF_8), artifactFile)
           }
+          case ".rb" => {
+            ("ruby:default", FileUtils.readFileToString(new File(artifactFile), StandardCharsets.UTF_8), artifactFile)
+          }
           case _ => ("", "", artifactFile)
         }
       }
