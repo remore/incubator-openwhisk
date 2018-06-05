@@ -54,13 +54,14 @@ the [Docker](docker-actions.md) action or [native binary](docker-actions.md#crea
 paths more suitable. Multiple actions may be composed together to create a longer processing pipeline called a
 [sequence](#creating-action-sequences). A more advanced form of composition is described [here](conductors.md).
 
-* [JavaScript](actions-node.md)
-* [Python](actions-python.md)
+* [Go](actions-go.md)
 * [Java](actions-java.md)
+* [JavaScript](actions-node.md)
 * [PHP](actions-php.md)
+* [Python](actions-python.md)
+* [Ruby](#creating-ruby-actions)
 * [Swift](actions-swift.md)
 * [Docker and native binaries](actions-docker.md)
-* [Go](actions-go.md)
 
 ## The basics
 
