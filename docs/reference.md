@@ -440,7 +440,7 @@ Ruby actions are executed using Ruby 2.5. To use this runtime, specify the `wsk`
 
 A few Ruby gems such as `mechanize` and `jwt` are available in addition to the default and bundled gems. See Dockerfile of ruby runtime image for more information.
 
-Last but not least, you can use arbitrary gem so long as you use zipped actions to package all the dependencies. doc/actions.md will explain how to do this.
+Last but not least, you can use arbitrary gem so long as you use zipped actions to package all the dependencies. [this page](./actions.md) will explain how to do this.
 
 ## Docker actions
 
