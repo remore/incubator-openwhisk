@@ -23,7 +23,7 @@
 Actions are stateless code snippets that run on the OpenWhisk platform.
 For example, an action can be used to detect the faces in an image, respond to a database change,
 aggregate a set of API calls, or post a Tweet.
-An action can be written as a JavaScript, Swift, Python or PHP function, a Java method,
+An action can be written as a JavaScript, Swift, Python or PHP function, a Java or Ruby method,
 any binary-compatible executable including Go programs and custom executables packaged as Docker containers.
 
 Actions can be explicitly invoked, or run in response to an event.
@@ -42,6 +42,7 @@ Learn how to create, invoke, and debug actions in your preferred development env
 * [Python](#creating-python-actions)
 * [Java](#creating-java-actions)
 * [PHP](#creating-php-actions)
+* [Ruby](#creating-ruby-actions)
 * [Docker](#creating-docker-actions)
 * [Go](#creating-go-actions)
 * [Native binaries](#creating-native-actions)
@@ -642,6 +643,64 @@ and then create the action:
 
 ```bash
 wsk action create helloPHP --kind php:7.1 helloPHP.zip
+```
+
+
+## Creating Ruby actions
+
+The process of creating Ruby actions is similar to that of JavaScript actions. The following sections guide you through creating and invoking a single Ruby action, and demonstrate how to zip your Ruby actions.
+
+### Creating and invoking a Ruby action
+
+An action is simply a top-level Ruby method. For example, create a file called `hello.rb` with the following source code:
+
+```ruby
+def main(args)
+  name = args["name"] || "stranger"
+  greeting = "Hello #{name}!"
+  print greeting
+  { "greeting" => greeting }
+end
+```
+
+Ruby actions always consume a Hash and return a Hash. The entry method for the action is `main` by default but may be specified explicitly when creating the action with the `wsk` CLI using `--main`, as with any other action type.
+
+You can create an OpenWhisk action called `helloRuby` from this function as follows:
+
+```
+wsk action create helloRuby hello.rb
+```
+
+The CLI automatically infers the type of the action from the source file extension. For `.rb` source files, the action runs using a Ruby 2.5 runtime. See the Ruby [reference](./reference.md#ruby-actions) for more information.
+
+Action invocation is the same for Ruby actions as it is for JavaScript actions:
+
+```
+wsk action invoke --result helloRuby --param name World
+```
+
+```json
+  {
+      "greeting": "Hello World!"
+  }
+```
+
+Find out more about parameters in the [Working with parameters](./parameters.md) section.
+
+### Packaging Ruby actions in zip files
+
+You can package a Ruby action along with other files and dependent packages in a zip file.
+The filename of the source file containing the entry point (e.g., `main`) must be `main.rb`.
+For example, to create an action that includes a second file called `helper.rb`, first create an archive containing your source files:
+
+```bash
+zip -r hello_ruby.zip main.rb helper.rb
+```
+
+and then create the action:
+
+```bash
+wsk action create helloRuby --kind ruby:2.5 hello_ruby.zip
 ```
 
 

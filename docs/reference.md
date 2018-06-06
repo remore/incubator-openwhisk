@@ -434,6 +434,14 @@ The following Composer packages are also available:
 - guzzlehttp/guzzle       v6.3.0
 - ramsey/uuid             v3.6.1
 
+## Ruby actions
+
+Ruby actions are executed using Ruby 2.5. To use this runtime, specify the `wsk` CLI parameter `--kind ruby:2.5` when creating or updating an action. This is the default when creating an action with file that has a `.rb` extension.
+
+A few Ruby gems such as `mechanize` and `jwt` are available in addition to the default and bundled gems. See Dockerfile of ruby runtime image for more information.
+
+Last but not least, you can use arbitrary gem so long as you use zipped actions to package all the dependencies. doc/actions.md will explain how to do this.
+
 ## Docker actions
 
 Docker actions run a user-supplied binary in a Docker container. The binary runs in a Docker image based on [python:3.6.1-alpine](https://hub.docker.com/r/library/python), so the binary must be compatible with this distribution.

@@ -25,7 +25,7 @@ This page outlines how to configure parameters when deploying packages and actio
 
 ### Passing parameters to an action at invoke time
 
-Parameters can be passed to the action when it is invoked. These examples use JavaScript but all the other languages work the same way (see documentation on [Swift actions](./actions.md#creating-swift-actions), [Python actions](./actions.mdcreating-python-actions), [Java actions](./actions.mdcreating-java-actions), [PHP actions](./actions.mdcreating-php-actions), [Docker actions](./actions.mdcreating-docker-actions) or [Go actions](./actions.mdcreating-go-actions) as appropriate for more detailed examples).
+Parameters can be passed to the action when it is invoked. These examples use JavaScript but all the other languages work the same way (see documentation on [Swift actions](./actions.md#creating-swift-actions), [Python actions](./actions.mdcreating-python-actions), [Java actions](./actions.mdcreating-java-actions), [PHP actions](./actions.mdcreating-php-actions), [Ruby actions](./actions.md#creating-ruby-actions), [Docker actions](./actions.mdcreating-docker-actions) or [Go actions](./actions.mdcreating-go-actions) as appropriate for more detailed examples).
 
 1. Use parameters in the action. For example, create 'hello.js' file with the following content:
 
