@@ -63,6 +63,12 @@ paths more suitable. Multiple actions may be composed together to create a longe
 * [Swift](actions-swift.md)
 * [Docker and native binaries](actions-docker.md)
 
+Multiple actions from different languages may be composed together to create a longer processing
+pipeline called a [sequence](#creating-action-sequences). The polyglot nature of the composition is
+powerful in that it affords you the ability to use the right language for the problem you're solving,
+and separates the orchestration of the dataflow between functions from the choice of language.
+A more advanced form of composition is described [here](conductors.md).
+
 ## The basics
 
 To use a function as an action, it must conform to the following:
