@@ -59,7 +59,7 @@ paths more suitable. Multiple actions may be composed together to create a longe
 * [JavaScript](actions-node.md)
 * [PHP](actions-php.md)
 * [Python](actions-python.md)
-* [Ruby](#creating-ruby-actions)
+* [Ruby](actions-ruby.md)
 * [Swift](actions-swift.md)
 * [Docker and native binaries](actions-docker.md)
 
